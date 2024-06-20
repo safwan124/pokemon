@@ -30,9 +30,9 @@ const App = () => {
   };
 
   const getPokemon = async (data) => {
-    const firstTenUrls = data.slice(0, 10).map((item) => item.url);
+    const firstfiveUrls = data.slice(0, 6).map((item) => item.url);
     const pokeData = await Promise.all(
-      firstTenUrls.map(async (url) => {
+      firstfiveUrls.map(async (url) => {
         const response = await fetch(url);
         const pokemonData = await response.json();
         return pokemonData;
